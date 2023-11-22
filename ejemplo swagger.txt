@@ -1,0 +1,787 @@
+openapi: 3.0.0
+info:
+  title: Pre Aprobación Online VWFS
+  description: Portal Pre Aprobación de Ofertas Online para clientes VWFS
+  contact:
+    name: Xavier Sosa
+Expand
+Preaprobaciononline_vwfs.yaml
+21 KB
+fedemacchi — Today at 11:44 AM
+https://editor.swagger.io/
+fedemacchi — Today at 12:23 PM
+Aca va con el OperationId modificado en el primer servicio
+openapi: 3.0.0
+info:
+  title: Pre Aprobación Online VWFS
+  description: Portal Pre Aprobación de Ofertas Online para clientes VWFS
+  contact:
+    name: Xavier Sosa
+    email: xavier.sosa2.contractor@gdevtools.com
+  version: 1.0.0
+servers:
+  - url: https://was90desa1/clientesvwfs/preaprobacion.html
+  - url: https://test1-qa.bbvafrances.com.ar/clientesvwfs/preaprobacion.html
+  - url: https://clientes.vwfs.com.ar/clientesvwfs/preaprobacion.html
+tags:
+  - name: Datos Iniciales
+  - name: Datos Personales y Comerciales
+  - name: Crear POL
+  - name: Descargar Documentos
+paths:
+  /preaprobacion/v1/postDatosInicialesV1:
+    post:
+      tags:
+        - Datos Iniciales
+      summary: Ingresa la consulta desde WhiteLabel para validar datos del cliente.
+      operationId: 'empresasVWFSPOSTDatosInicialesV1'
+      security:
+        - basicAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/post-getInitialData-request'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/post-getInitialData'
+        '400':
+          description: 'Errores 4xx'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        '403':
+          description: 'Error 403'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error403'
+        '404':
+          description: 'Error 404'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error404'
+        '500':
+          description: 'Error 5xx'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+  /preaprobacion/v1/postConsultarNOSISV1:
+    post:
+      tags:
+        - Datos Personales y Comerciales
+      summary: Ingresa la consulta de Nosis para validar datos del cliente
+      operationId: 'preAprobacionOnlineVWFSPOSTConsultarNOSISV1'
+      security:
+        - basicAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/post-getDataNOSIS-request'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/post-getDataNOSIS'
+        '400':
+          description: 'Errores 4xx'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        '403':
+          description: 'Error 403'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error403'
+        '404':
+          description: 'Error 404'
+          content:
+            application/json:
+... (567 lines left)
+Collapse
+Preaprobaciononline_vwfs.yaml
+21 KB
+?
+fedemacchi
+fedemacchi
+openapi: 3.0.0
+info:
+  title: Pre Aprobación Online VWFS
+  description: Portal Pre Aprobación de Ofertas Online para clientes VWFS
+  contact:
+    name: Xavier Sosa
+    email: xavier.sosa2.contractor@gdevtools.com
+  version: 1.0.0
+servers:
+  - url: https://was90desa1/clientesvwfs/preaprobacion.html
+  - url: https://test1-qa.bbvafrances.com.ar/clientesvwfs/preaprobacion.html
+  - url: https://clientes.vwfs.com.ar/clientesvwfs/preaprobacion.html
+tags:
+  - name: Datos Iniciales
+  - name: Datos Personales y Comerciales
+  - name: Crear POL
+  - name: Descargar Documentos
+paths:
+  /preaprobacion/v1/postDatosInicialesV1:
+    post:
+      tags:
+        - Datos Iniciales
+      summary: Ingresa la consulta desde WhiteLabel para validar datos del cliente.
+      operationId: 'empresasVWFSPOSTDatosInicialesV1'
+      security:
+        - basicAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/post-getInitialData-request'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/post-getInitialData'
+        '400':
+          description: 'Errores 4xx'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        '403':
+          description: 'Error 403'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error403'
+        '404':
+          description: 'Error 404'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error404'
+        '500':
+          description: 'Error 5xx'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+  /preaprobacion/v1/postConsultarNOSISV1:
+    post:
+      tags:
+        - Datos Personales y Comerciales
+      summary: Ingresa la consulta de Nosis para validar datos del cliente
+      operationId: 'preAprobacionOnlineVWFSPOSTConsultarNOSISV1'
+      security:
+        - basicAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/post-getDataNOSIS-request'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/post-getDataNOSIS'
+        '400':
+          description: 'Errores 4xx'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        '403':
+          description: 'Error 403'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error403'
+        '404':
+          description: 'Error 404'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error404'
+        '500':
+          description: 'Error 5xx'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+  /preaprobacion/v1/postCodificadoresV1:
+    post:
+      tags:
+        - Datos Personales y Comerciales
+      summary: Ingresan los datos para cargar los diferentes combos
+      operationId: 'preAprobacionOnlineVWFSPOSTCodificadoresV1'
+      security:
+        - basicAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/post-getEncoders-request'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/post-getEncoders'
+        '400':
+          description: 'Errores 4xx'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        '403':
+          description: 'Error 403'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error403'
+        '404':
+          description: 'Error 404'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error404'
+        '500':
+          description: 'Error 5xx'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+  /preaprobacion/v1/postVariablesLegalesV1:
+    post:
+      tags:
+        - Datos Personales y Comerciales
+      summary: Ingresan los datos necesarios para el texto de legales
+      operationId: 'preAprobacionOnlineVWFSPOSTVariablesLegalesV1'
+      security:
+        - basicAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/post-getLegalVariables-request'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/post-getLegalVariables'
+        '400':
+          description: 'Errores 4xx'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        '403':
+          description: 'Error 403'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error403'
+        '404':
+          description: 'Error 404'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error404'
+        '500':
+          description: 'Error 5xx'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+  /preaprobacion/v1/postCrearPOLV1:
+    post:
+      tags:
+        - Crear POL
+      summary: Enviar los datos guardados para su validacion y guardado
+      operationId: 'preAprobacionOnlineVWFSPOSTCrearPOLV1'
+      security:
+        - basicAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/post-createPOL-request'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/post-createPOL'
+        '400':
+          description: 'Errores 4xx'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        '403':
+          description: 'Error 403'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error403'
+        '404':
+          description: 'Error 404'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error404'
+        '500':
+          description: 'Error 5xx'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+  /preaprobacion/v1/postDescargarPDFV1:
+    post:
+      tags:
+        - Descargar Documentos
+      summary: Servicio que se utilizara para la exportacion del PDF
+      operationId: 'preAprobacionOnlineVWFSPOSTDescargarPDFV1'
+      security:
+        - basicAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/post-downloadPDF-request'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/post-downloadPDF'
+        '400':
+          description: 'Errores 4xx'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        '403':
+          description: 'Error 403'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error403'
+        '404':
+          description: 'Error 404'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error404'
+        '500':
+          description: 'Error 5xx'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+
+components:
+  schemas:
+    post-getInitialData-request:
+      type: object
+      properties:
+        idConsulta:
+          description: Numero de consulta
+          type: integer
+    post-getInitialData:
+      type: object
+      properties:
+        estado:
+          type: object
+          properties:
+            codigo:
+              description: Código de control de errores de ejecución
+              type: integer
+            msg:
+              description: Mensaje del código de error
+              type: string
+              example: ok
+        usuario:
+          type: object
+          properties:
+            apellido:
+              description: Apellido del cliente
+              type: string
+            nombre:
+              description: Nombre del Cliente
+              type: string
+            importeAFinanciar:
+              description: Monto del prestamo
+              type: number
+            concesionarioDesc:
+              description: Descripcion del concesionario
+              type: string
+            submodelo:
+              description: Descripcion del submodelo del automotor
+              type: string
+    post-getDataNOSIS-request:
+      type: object
+      properties:
+        idConsulta:
+          description: Numero de consulta
+          type: integer
+        cuilCuit:
+          description: Cuil o Cuit del cliente
+          type: string
+    post-getDataNOSIS:
+      type: object
+      properties:
+        estado:
+          type: object
+          properties:
+            codigo:
+              description: Código de control de errores de ejecución
+              type: integer
+            msg:
+              description: Mensaje del código de error
+              type: string
+              example: ok
+        usuario:
+          type: object
+          properties:
+            codAct1VWFS:
+              description: Codigo de la actividad
+              type: integer
+            descAct1VWFS:
+              description: Descripcion de la actividad
+              type: string
+            fecNacimiento:
+              description: Fecha de nacimiento del cliente
+              type: string
+            razSocial:
+              description: Nombre y apellido del cliente
+              type: string
+            situacionLaboral:
+              description: Situacion laboral del cliente
+              type: integer
+    post-getEncoders-request:
+      type: object
+      properties:
+        tablaId:
+          description: Numero de la tabla
+          type: integer
+    post-getEncoders:
+      type: object
+      properties:
+        estado:
+          type: object
+          properties:
+            codigo:
+              description: Código de control de errores de ejecución
+              type: integer
+            msg:
+              description: Mensaje del código de error
+              type: string
+              example: ok
+        codificadores:
+          type: object
+          properties:
+            tablaId:
+              description: Numero de la tabla
+              type: integer
+            itemCod:
+              description: Codigo del item
+              type: integer
+            itemCodAlfa:
+              description: Codigo alfanumerico del item
+              type: string
+            itemAbrev:
+              description: Abreviacion de la descripcion
+              type: string
+            itemDenom:
+              description: Descripcion del item
+              type: string
+    post-getLegalVariables-request:
+      type: object
+      properties:
+        idConsulta:
+          description: Id consulta de WhiteLabel
+          type: integer
+    post-getLegalVariables:
+      type: object
+      properties:
+        estado:
+          type: object
+          properties:
+            codigo:
+              description: Código de control de errores de ejecución
+              type: integer
+            msg:
+              description: Mensaje del código de error
+              type: string
+              example: ok
+        legales:
+          type: object
+          properties:
+            tasa:
+              description: Porcentaje de la tasa.
+              type: number
+            plazo:
+              description: Plazo en meses.
+              type: integer
+            CFTConIVANominal:
+              description: Costo financiero total IVA nominal.
+              type: number
+            CFTConIVAEfec:
+              description: Costo financiero total IVA efectiva.
+              type: number
+            CFTSinIVANominal:
+              description: Costo financiero total sin IVA nominal.
+              type: number
+            CFTSinIVAEfec: 
+              description: Costo financiero total sin IVA efectiva.
+              type: number
+            fechaDesdeCamp:
+              description: Fecha desde campaña.
+              type: string
+            fechaHastaCamp:
+              description: Fecha hasta campaña.
+              type: string
+            tipoTasa:
+              description: Tipo tasa
+              type: string
+            sistemaAmort:
+              description: Tipo de amortizacion del préstamo
+              type: string
+            modelo:
+              description: Modelo automotor.
+              type: string
+            TNA:
+              description: Tasa Nominal Anual
+              type: number
+            TEA:
+              description: Tasa Efectiva Anual
+              type: number
+            importeSugerido:
+              description: Importe automotor resultado de la eleccion del cliente.
+              type: number
+            anticipo:
+              description: Anticipo a recibir por el cliente.
+              type: number
+            montoSolicitado:
+              description: Importe solicitado por el cliente.
+              type: number
+            companiaSeguro:
+              description: Nombre compañia seguro
+              type: string
+            coberturaSeguro:
+              description: Tipo de cobertura seguro.
+              type: string
+            premioSeguro:
+              description: Valor de la cuota seguro.
+              type: number
+            fechaCotizacion:
+              description: Fecha de consulta de cotización
+              type: string
+            valorCuota:
+              description: Valor final de cuota.
+              type: number
+            montoMinimoFinan:
+              description: Monto mínimo de financiación segun campaña.
+              type: number
+            montoMaximoFinan:
+              description: Monto máximo de financiación segun campaña.
+              type: number
+            provincia:
+              description: Codigo de provincia.
+              type: string
+        cuotas:
+         type: object
+         properties:
+            cuotaNro:
+              description: Número de Cuota
+              type: integer
+            parteCapital: 
+              description: Importe parte capital
+              type: number
+            parteInteres: 
+              description: Importe parte interés
+              type: number
+            parteIVA: 
+              description: Importe de IVA
+              type: number
+            totalSinSeguro:
+              description:  Importe sin seguro
+              type: number
+            seguro: 
+              description: Importe del seguro
+              type: number
+            totalConSeguro:
+              description:  Importe con seguro
+              type: number
+    post-createPOL-request:
+      type: object
+      properties:
+        idConsulta:
+          description: Numero de consulta
+          type: integer
+        cuilCuit:
+          description: Nro identificacion tributaria
+          type: integer
+        nombre:
+          description: Nombre del cliente
+          type: string
+        apellido:
+          description: Apellido del cliente
+          type: string
+        estadoCivil:
+          description: Estado civil (ItemCod)
+          type: integer
+        nivelEducativo: 
+          description: Nivel educativo alcanzado (ItemCod).
+          type: integer
+        ocupacion:
+          description: Ocupacion del cliente (ItemCod).
+          type: integer
+        antiLaboral:
+          description: Antiguedad laboral en años (ItemCod).
+          type: integer
+        situacionVivienda:
+          description: Situacion de la vivienda (ItemCod).
+          type: integer
+        condicionIVA:
+          description: Situacion IVA (ItemCod).
+          type: integer
+        fechaNacimiento:
+          description: Fecha de nacimiento del cliente
+          type: string
+        situacionLaboral:
+          description: Situacion laboral del cliente (ItemCod).
+          type: integer
+        actividad:
+          description: Actividad laboral (ItemCod).
+          type: integer
+    post-createPOL:
+      type: object
+      properties:
+        estado:
+          type: object
+          properties:
+            codigo:
+              description: Código de control de errores de ejecución
+              type: integer
+            msg:
+              description: Mensaje del código de error
+              type: string
+              example: ok
+        resultado:
+          type: object
+          properties:
+            idOferta:
+              description: Id oferta.
+              type: integer
+            resultEtapaPOL:
+              description: Mensaje del resultado de etapaPOL
+              type: string
+    post-downloadPDF-request:
+      type: object
+      properties:
+        idConsulta:
+          description: Numero de la consulta de WL
+          type: integer
+    post-downloadPDF:
+      type: object
+      properties:
+        estado:
+          type: object
+          properties:
+            codigo:
+              description: Código de control de errores de ejecución
+              type: integer
+            msg:
+              description: Mensaje del código de error
+              type: string
+              example: ok
+        documento:
+          type: object
+          properties:
+            pdf:
+              type: string
+  
+    error:
+      description: Error comun de retorno del backend
+      type: object
+      properties:
+        codigo:
+          description: codigo de error
+          example: '400'
+          type: integer
+        message:
+          title: mensaje de error
+          description: mensaje de error enviado desde el backend
+          type: string
+      required:
+        - code
+        - message
+    error403:
+      description: Error Forbidden
+      type: object
+      properties:
+        codigo:
+          description: codigo de error
+          example: '403'
+          type: integer
+        message:
+          title: mensaje de error
+          description: Acceso denegado o Sesión Caducada
+          type: string
+          example: Forbidden
+      required:
+        - code
+        - message
+    error404:
+      description: Error página not found
+      type: object
+      properties:
+        codigo:
+          description: codigo de error
+          example: '404'
+          type: integer
+        message:
+          title: mensaje de error
+          description: Not Found
+          type: string
+          example: Not found
+      required:
+        - code
+        - message
+  requestBodies: {}
+  headers: {}
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+  links: {}
+  callbacks: {}
